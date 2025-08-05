@@ -95,8 +95,6 @@ function payloadBuilder(){
 	document.getElementById("payload4").value = p4;
 	document.getElementById("payload5").value = p5;
 	document.getElementById("payload6").value = p6;
-	document.getElementById("payload7").value = p7;
-	document.getElementById("payload8").value = p8;
 	
 
 }
@@ -107,9 +105,8 @@ function copyBuild(){
 	copyInputValue("payload4","copy4");
 	copyInputValue("payload5","copy5");
 	copyInputValue("payload6","copy6");
-	copyInputValue("payload7","copy7");
-	copyInputValue("payload8","copy8");
 }
+
 
 
 
